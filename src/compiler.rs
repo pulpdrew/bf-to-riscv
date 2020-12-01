@@ -54,15 +54,13 @@ pub fn compile_risc_v(program: &[Instruction]) -> String {
             Instruction::LoopStart { end } => {
                 output.push_str("lbu s1, (s0)\n");
                 output.push_str(&format!("bnez s1, start_{}\n", index));
-                output.push_str(&format!("la t0, end_{}\n", end));
-                output.push_str("jr t0\n");
+                output.push_str(&format!("j end_{}\n", end));
                 output.push_str(&format!("start_{}:\n\n", index));
             }
             Instruction::LoopEnd { start } => {
                 output.push_str("lbu s1, (s0)\n");
                 output.push_str(&format!("beqz s1, end_{}\n", index));
-                output.push_str(&format!("la t0, start_{}\n", start));
-                output.push_str("jr t0\n");
+                output.push_str(&format!("j start_{}\n", start));
                 output.push_str(&format!("end_{}:\n\n", index));
             }
         }
