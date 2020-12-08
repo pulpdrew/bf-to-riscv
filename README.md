@@ -1,15 +1,3 @@
----
-title: How to Compile Brainfuck to RISC-V with Rust
-tags: tech
-topics: 
-  - Programming
-  - Compilers
-  - Rust
-summary: A couple of weeks ago, I worked through "Learn Assembly by Writing Entirely Too Many Brainfuck Compilers". That article covers the basics of compiling Brainfuck to target x86, ARM, wasm, and LLVM IR. Here, I will cover some of the same information, but with a focus on targeting RISC-V assembly.
-date: 2020-12-08
-layout: tech
----
-
 A couple of weeks ago, I worked through [Learn Assembly by Writing Entirely Too Many Brainfuck Compilers](https://github.com/pretzelhammer/rust-blog/blob/master/posts/too-many-brainfuck-compilers.md). That article covers the basics of compiling Brainfuck to target x86, ARM, wasm, and LLVM IR. Here, I will cover some of the same information, but with a focus on targeting RISC-V assembly.
 
 ## Brainfuck
