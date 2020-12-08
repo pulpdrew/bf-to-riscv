@@ -14,7 +14,7 @@ pub fn parse(source: &str) -> Vec<Instruction> {
 
         // If the new instruction is the same as the previous, just increment the count in the previous
         if let Some(prev_inst) = program.last_mut() {
-            if prev_inst == &next_inst.unwrap() && prev_inst.can_increment() {
+            if prev_inst.variant_eq(&next_inst.unwrap()) && prev_inst.can_increment() {
                 prev_inst.increment();
                 next_inst = None;
             }

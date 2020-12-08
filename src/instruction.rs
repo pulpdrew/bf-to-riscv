@@ -60,11 +60,8 @@ impl Instruction {
             _ => panic!("set_target() called on instruction with no target"),
         }
     }
-}
 
-/// Implementation of PartialEq for Instruction that compares only the variant, not the field value
-impl PartialEq for Instruction {
-    fn eq(&self, other: &Self) -> bool {
+    pub fn variant_eq(&self, other: &Self) -> bool {
         std::mem::discriminant(self) == std::mem::discriminant(other)
     }
 }
